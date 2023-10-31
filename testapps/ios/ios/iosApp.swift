@@ -20,7 +20,7 @@ struct iosApp: App {
         
         Task.detached {
             let intStream = SkieTest().intFlow()
-            for await intValue in intStream {
+            for await intValue in intStream.map({$0}) {
                 print("Debug \(intValue)")
             }
         }
