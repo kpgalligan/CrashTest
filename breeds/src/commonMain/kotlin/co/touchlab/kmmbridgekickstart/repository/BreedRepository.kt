@@ -106,3 +106,7 @@ sealed class BreedDataEvent {
     data class Error(val reason: BreedAnalytics.NotFetchedReason) : BreedDataEvent()
     data object RefreshedSuccess : BreedDataEvent()
 }
+
+enum class Crashy {
+    OhPleae, Crash, ForMe
+}

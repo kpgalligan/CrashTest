@@ -17,6 +17,13 @@ struct iosApp: App {
         handle.appAnalytics.appStarted()
         print(StartSDKKt.sayHello())
         
+        
+        Task.detached {
+            let intStream = SkieTest().intFlow()
+            for await intValue in intStream {
+                print("Debug \(intValue)")
+            }
+        }
     }
     
     var body: some Scene {
